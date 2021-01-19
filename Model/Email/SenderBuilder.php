@@ -112,10 +112,7 @@ class SenderBuilder extends \Magento\Sales\Model\Order\Email\SenderBuilder
 
             $date = $this->dateTime->date('Y-m-d_H-i-s');
 
-            $this->transportBuilder->addAttachment(
-                $pdfFileData['filestream'],
-                $pdfFileData['filename'] . $date . '.pdf'
-            );
+            $this->transportBuilder->addAttachment($pdfFileData['filestream'], $pdfFileData['filename'] . $date . '.pdf', 'application/pdf');
         }
 
         return $this;
